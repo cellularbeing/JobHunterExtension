@@ -46,7 +46,6 @@ function renderStatus(statusText) {
 
 document.addEventListener('DOMContentLoaded', function() {
   getCurrentTabUrl(function(url) {
-    // Put the image URL in Google search.
     renderStatus(url);
   });
 });

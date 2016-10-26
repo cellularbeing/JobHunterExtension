@@ -5,57 +5,61 @@
  value "popup.html".
  -->
 <html>
-  <head>
-    <title>Job Finder</title>
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #webURL {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        max-width: 250px;
-      }
-    </style>
+	<head>
+		<h1 align="Center">Job Finder</h1>
+		<style>
+		  body {
+			font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+			font-size: 100%;
+		  }
+		  #webURL {
+			/* avoid an excessively wide status text */
+			white-space: pre;
+			overflow-x: scroll;
+			max-width: 250px;
+		  }
+		</style>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
-    <script src="popup.js"></script>
-  </head>
-  <body>
-
-  <p align="center">Save a Job!</p>
-  <table border="1">
-    <tr>
-    <td><div id="jobName">Title</div></td>
-    <td><input type="text" name="" style="width: 250px;"></td>
-    </tr>
-    <tr>
-    <td>URL : </td>
-    <td><div id="webURL"></div></td>
-    </tr>
-    <tr>
-    <td>Status </td>
-    <td>     
-    <select>
-      <option>Need To Apply</option>
-      <option>Have Applied</option>
-      <option>Waiting for Response</option>
-    </select>
-    </td>
-    </tr>    
-  </table></br>
-  <div class="buttons" align="center">
-    <input type="submit" value="Submit">
-    <input type="submit" value="cancel">
-  </div>
-        
-  </body>
+		<!--
+		  - JavaScript and HTML must be in separate files: see our Content Security
+		  - Policy documentation[1] for details and explanation.
+		  -
+		  - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+		 -->
+		<script src="popup.js"></script>
+	</head>
+	<body>
+		<form id="myForm" action="index.html" method="post" target="_blank">
+			<p align="center">Save a Job!</p>
+			<table align="center" border="1">
+				<tr>
+				<td><div id="jobName">Title</div></td>
+				<td><input type="text" name="title" style="width: 250px;"></td>
+				</tr>
+				<tr>
+				<td>URL : </td>
+				<td><div id="webURL"></div></td>
+				</tr>
+				<tr>
+				<td>Status </td>
+				<td>     
+				<select type="text" name="status"style="width: 250px">
+				  <option>Need To Apply</option>
+				  <option>Have Applied</option>
+				  <option>Waiting for Response</option>
+				</select>
+				</td>
+				</tr>    
+			</table></br>
+			<div class="buttons" align="center">
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+		<script>
+		function myFunction() {
+			document.getElementById("myForm").submit();	
+		}
+		</script>
+	</body>
 </html>
 
